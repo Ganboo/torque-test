@@ -9,7 +9,7 @@ output "public_ip" {
 }
 
 output "ssh_command" {
-  value = length(trimspace(var.key_name)) > 0 ? "ssh -i <path_to_${var.key_name}.pem> ubuntu@${aws_instance.this.public_ip}" : "No key_name provided (ssh_command not available)"
+  value       = length(trimspace(var.key_name)) > 0 ? "ssh -i <path_to_${var.key_name}.pem> ubuntu@${aws_instance.this.public_ip}" : "No key_name provided (ssh_command not available)"
   description = "SSH command to connect to the instance"
 }
 

@@ -25,7 +25,7 @@ Internet -> IGW -> VPC -> Public Subnet -> EC2 Instance
 ## Quick Start
 1. Get your Torque agent installed and healthy
 2. Connect this repo in Torque (you'll need to set up a repo store)
-3. Create a blueprint from `blueprints/env.yaml` - **important**: update `store: torque-homelab` to match your actual store name
+3. Create a blueprint from `blueprints/env.yaml` - **important**: update `store: torque-homelab` to match your actual store name and make sure you've selected your own agent.
 4. Set up AWS authentication
 5. Launch it and wait for the magic to happen
 6. Check AWS console to see the resources, then use the outputs (SSH command, public IP, etc.)
@@ -50,24 +50,29 @@ Internet -> IGW -> VPC -> Public Subnet -> EC2 Instance
 
 ### Repository Connection
 ![Repository Status](screenshots/repo-status.png)
+
 *Repository successfully connected and synced in Torque*
 
 ### Environment Launch
 ![Launch Logs](screenshots/launch-logs.png)
+
 *Launch logs showing successful deployment of network and compute grains*
 
 ### Environment Status
 ![Environment Status](screenshots/environment-status.png)
+
 *Environment in "Running" state with all grains successfully provisioned*
 
 ### AWS Resources
 ![AWS Console Compute Resource](screenshots/aws-console-compute.png)
 ![AWS Console Resources](screenshots/aws-console-network-sg.png)
 ![AWS Console Resources](screenshots/aws-console-network-vpc.png)
+
 *Provisioned AWS resources: VPC, public subnet, internet gateway, and EC2 instance*
 
 ### Environment Outputs
 ![Environment Outputs](screenshots/environment-outputs.png)
+
 *Environment outputs displayed in Torque UI, including instance ID, public IP, and SSH command*
 
 ## Challenges Faced

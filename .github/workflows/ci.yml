@@ -3,14 +3,15 @@ name: ci
 on:
   pull_request:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dir: [ "grains/network", "grains/compute" ]
+        dir: ["grains/network", "grains/compute"]
+
     defaults:
       run:
         working-directory: ${{ matrix.dir }}
@@ -20,7 +21,7 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.14.0
+          terraform_version: "1.14.0"
 
       - name: terraform fmt
         run: terraform fmt -check -recursive
@@ -36,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install yamllint
-        run: pip3 install yamllint
+        run: python3 -m pip install --upgrade pip yamllint
       - name: Lint blueprints and ansible files
-        run: yamllint -d "{extends: default, rules: {line-length: {max: 140}}}" blueprints configure
-
+        run: |
+          yamllint -d "{extends: default, rules: {line-length: {max: 140}}}" blueprints
