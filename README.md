@@ -61,7 +61,9 @@ Internet -> IGW -> VPC -> Public Subnet -> EC2 Instance
 *Environment in "Running" state with all grains successfully provisioned*
 
 ### AWS Resources
-![AWS Console Resources](screenshots/aws-console-resources.png)
+![AWS Console Compute Resource](screenshots/aws-console-compute.png)
+![AWS Console Resources](screenshots/aws-console-network-sg.png)
+![AWS Console Resources](screenshots/aws-console-network-vpc.png)
 *Provisioned AWS resources: VPC, public subnet, internet gateway, and EC2 instance*
 
 ### Environment Outputs
